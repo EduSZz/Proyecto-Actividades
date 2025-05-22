@@ -1,80 +1,107 @@
-# Activity App
+# ActividadesES
 
-## Overview
-The Activity App is a full-stack web application that allows users to manage their activities. It features user account creation, login functionality, and a dashboard for listing activities. Users can create, update, and delete activities, providing a comprehensive tool for activity management.
+## Descripción General
+**ActividadesES** es una aplicación web full-stack que permite a los usuarios gestionar sus actividades diarias. Incluye registro y autenticación de usuarios, así como un panel para crear, editar, completar y eliminar actividades.
 
-## Project Structure
-The project is divided into two main parts: the backend and the frontend.
+## Estructura del Proyecto
+
+El proyecto está dividido en dos partes principales: **backend** y **frontend**.
+
+---
 
 ### Backend
-The backend is built using Node.js with Express and TypeScript. It uses SQLite as the database. The backend structure is as follows:
+
+El backend está construido con **Node.js**, **Express** y **TypeScript**, utilizando **SQLite** como base de datos.
 
 - **src/**
-  - **controllers/**: Contains controllers for handling business logic.
-    - `activityController.ts`: Manages CRUD operations for activities.
-    - `userController.ts`: Manages user account operations.
-  - **models/**: Defines the data structures.
-    - `activity.ts`: Defines the Activity interface.
-    - `user.ts`: Defines the User interface.
-  - **routes/**: Defines the API routes.
-    - `activityRoutes.ts`: Routes for activity-related operations.
-    - `userRoutes.ts`: Routes for user-related operations.
-  - **middleware/**: Contains middleware functions.
-    - `auth.ts`: Middleware for user authentication.
-  - **database/**: Manages database connections and initialization.
-    - `sqlite.ts`: Functions for SQLite database management.
-  - `app.ts`: Entry point of the backend application.
-  - **types/**: Contains TypeScript types and interfaces.
-    - `index.ts`: Exports types used throughout the application.
+  - **controllers/**: Lógica de negocio.
+    - `activityController.ts`: CRUD de actividades.
+    - `userController.ts`: Operaciones de usuario.
+  - **models/**: Definición de interfaces de datos.
+    - `activity.ts`: Interfaz de Actividad.
+    - `user.ts`: Interfaz de Usuario.
+  - **routes/**: Rutas de la API.
+    - `activityRoutes.ts`: Rutas para actividades.
+    - `userRoutes.ts`: Rutas para usuarios.
+  - **middleware/**: Funciones middleware.
+    - `auth.ts`: Autenticación JWT.
+  - **database/**: Conexión y gestión de SQLite.
+    - `sqlite.ts`: Inicialización y conexión.
+  - **types/**: Tipos TypeScript globales.
+    - `index.ts`: Exporta tipos usados en la app.
+  - `app.ts`: Punto de entrada del backend.
+
+---
 
 ### Frontend
-The frontend is built using Angular. It provides a user-friendly interface for interacting with the backend. The frontend structure is as follows:
+
+El frontend está construido con **React**, **TypeScript** y **Tailwind CSS**. Proporciona una interfaz moderna y responsiva para interactuar con el backend.
 
 - **src/**
-  - **app/**
-    - **components/**: Contains Angular components for different functionalities.
-      - **dashboard/**: Displays the list of activities.
-        - `dashboard.component.ts`
-      - **login/**: Handles user login.
-        - `login.component.ts`
-      - **register/**: Handles user registration.
-        - `register.component.ts`
-      - **activity/**: Allows users to create and update activities.
-        - `activity.component.ts`
-    - **services/**: Contains services for API interactions.
-      - `activity.service.ts`: Interacts with the backend for activity operations.
-      - `auth.service.ts`: Manages user authentication.
-    - `app.module.ts`: Main module of the Angular application.
-  - `index.html`: Main HTML file for the Angular application.
+  - **components/**
+    - **Auth/**
+      - `Login.tsx`: Formulario de inicio de sesión.
+      - `Register.tsx`: Formulario de registro.
+    - **Dashboard/**
+      - `Dashboard.tsx`: Panel principal de actividades.
+      - `ActivityForm.tsx`: Formulario para crear/editar actividades.
+      - `ActivityList.tsx`: Lista de actividades.
+  - **services/**: Servicios para consumir la API.
+    - `auth.ts`: Autenticación y registro.
+    - `activity.ts`: Operaciones sobre actividades.
+    - `api.ts`: Configuración de Axios.
+  - **routes/**
+    - `PrivateRoute.tsx`: Protección de rutas privadas.
+  - `App.tsx`: Definición de rutas principales.
+  - `main.tsx`: Punto de entrada de React.
+  - `index.css`: Estilos globales (Tailwind).
 
-## Features
-- User account creation and login.
-- Dashboard for listing activities.
-- Create, update, and delete activities.
-- User authentication for secure access to features.
+---
 
-## Setup Instructions
-1. Clone the repository.
-2. Navigate to the `backend` directory and install dependencies:
+## Funcionalidades
+
+- Registro y autenticación de usuarios (JWT).
+- Panel de actividades por usuario.
+- Crear, editar, completar y eliminar actividades.
+- Interfaz moderna, responsiva y fácil de usar.
+
+---
+
+## Instrucciones de Instalación
+
+1. **Clona el repositorio:**
+   ```bash
+   git clone <url-del-repositorio>
    ```
+
+2. **Backend**
+   ```bash
    cd backend
    npm install
+   npm run dev
    ```
-3. Set up the SQLite database by running the initialization script.
-4. Start the backend server:
-   ```
-   npm start
-   ```
-5. Navigate to the `frontend` directory and install dependencies:
-   ```
-   cd frontend
-   npm install
-   ```
-6. Start the Angular application:
-   ```
-   ng serve
-   ```
-7. Open your browser and go to `http://localhost:4200` to access the application.
+   El backend estará disponible en [http://localhost:3000](http://localhost:3000)
 
-## Conclusion
-The Activity App provides a robust platform for managing activities with a clean separation between the backend and frontend. It leverages modern technologies to deliver a seamless user experience.
+3. **Frontend**
+   ```bash
+   cd ../frontend
+   npm install
+   npm run dev
+   ```
+   El frontend estará disponible en [http://localhost:5173](http://localhost:5173)
+
+---
+
+## Contribución
+
+¡Sugerencias y mejoras son bienvenidas! Puedes abrir issues o pull requests.
+
+---
+
+## Licencia
+
+MIT
+
+---
+
+**ActividadesES** — Tu gestor de actividades simple, moderno y seguro.
