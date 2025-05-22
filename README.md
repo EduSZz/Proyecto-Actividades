@@ -71,7 +71,7 @@ El frontend está construido con **React**, **TypeScript** y **Tailwind CSS**. P
 
 1. **Clona el repositorio:**
    ```bash
-   git clone <url-del-repositorio>
+   git clone https://github.com/EduSZz/Proyecto-Actividades.git
    ```
 
 2. **Backend**
